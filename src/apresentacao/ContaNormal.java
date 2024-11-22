@@ -1,3 +1,5 @@
+package apresentacao;
+
  
 public class ContaNormal extends Conta {
         
@@ -5,7 +7,7 @@ public class ContaNormal extends Conta {
     saldo = saldo + valor;
   }
   
-  public void debitar (double valor) {  // Conta Normal não possui limite, logo em uma operação de débito apenas o saldo está disponível.
+  public void debitar (double valor) {  // Conta Normal nï¿½o possui limite, logo em uma operaï¿½ï¿½o de dï¿½bito apenas o saldo estï¿½ disponï¿½vel.
     if ((saldo-valor) >= 0) {
     	saldo = saldo - valor;
     }

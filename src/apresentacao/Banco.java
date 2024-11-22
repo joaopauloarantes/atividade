@@ -1,3 +1,5 @@
+package apresentacao;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashSet;
@@ -15,12 +17,12 @@ public class Banco {
 		contas = contas();
 	}
 	
-	// Método para criar contas mantidas em ArrayList
+	// Mï¿½todo para criar contas mantidas em ArrayList
 	// Implementa Singleton
 	
 	private ArrayList<Conta> contas(){
 		// Singleton - Gatante que Banco tenha apenas
-		// uma única lista de contas.
+		// uma ï¿½nica lista de contas.
 		if (contas==null) {
 			ArrayList<Conta> contas = new ArrayList();
 			return contas;
@@ -28,12 +30,12 @@ public class Banco {
 		return contas;
 	}
 
-	//Método para criar contas mantidas em LinkedList
+	//Mï¿½todo para criar contas mantidas em LinkedList
 	// Implementa Singleton
 	/*
 	private List<Conta> contas(){
 		//Singleton - garante que o banco tenha apenas
-		//uma única lista de contas
+		//uma ï¿½nica lista de contas
 		
 		if (contas==null) {
 			List<Conta> contas = new LinkedList<>();
@@ -43,14 +45,14 @@ public class Banco {
 	}
 	*/
 	
-	//Método para criar contas mantidas em HashMap
+	//Mï¿½todo para criar contas mantidas em HashMap
 	/*
 	private HashSet<Conta> contas(){
 		HashSet<Conta> contas = new HashSet<Conta>();
 		return contas;
 	}
 	*/
-	//Método para criar contas mantidas em HashMap
+	//Mï¿½todo para criar contas mantidas em HashMap
 	/*
 	private HashMap<String,Conta> contas(){
 		HashMap<String,Conta> contas = new HashMap<String,Conta>();
@@ -58,8 +60,8 @@ public class Banco {
 	}
 	*/
 	
-	// Método para criar contas mantidas em TreeSet	
-	// Padrão Gof Criacional Singleton 
+	// Mï¿½todo para criar contas mantidas em TreeSet	
+	// Padrï¿½o Gof Criacional Singleton 
 	/*
 	private TreeSet<Conta> contas(){
 		if (contas==null) {
@@ -93,7 +95,7 @@ public class Banco {
 	      c = (Conta)iterator.next();
 	      if(c.getNumero().equals(numero)) {
 	        c.saldo+=valor;
-	        // A conta na posição do iterator atual será creditada        
+	        // A conta na posiï¿½ï¿½o do iterator atual serï¿½ creditada        
 	      }
 	    }
 	}
@@ -105,13 +107,13 @@ public class Banco {
 	      c = (Conta)iterator.next();
 	      if(c.getNumero().equals(numero)) {
 	        c.saldo-=valor;
-	        // A conta na posição do iterator atual será debitada   
+	        // A conta na posiï¿½ï¿½o do iterator atual serï¿½ debitada   
 	      }
 	    }
 	}
 	
 	private void TransfereConta(String numero_conta_origem, String numero_conta_destino, double valor) {
-		// Implementar exceção limite conta
+		// Implementar exceï¿½ï¿½o limite conta
 		DebitaConta(numero_conta_origem, valor);
 		CreditaConta(numero_conta_destino, valor);
 	}
@@ -134,9 +136,9 @@ public class Banco {
 	
 	private void ListaContasPDF() {
 		Iterator<Conta> iterator = contas.iterator();
-		ContasPDFBuilder contasPdf = new ContasPDFBuilder();
-		System.out.println("Imprimindo PDF.");
-		contasPdf.gerarListagemContas(iterator);		
+		//ContasPDFBuilder contasPdf = new ContasPDFBuilder();
+		//System.out.println("Imprimindo PDF.");
+		//contasPdf.gerarListagemContas(iterator);		
 
 	}
 	
@@ -156,31 +158,31 @@ public class Banco {
 		c2.setSaldo(2500);
 		c2.setLimite(1000.67);
 		
-		System.out.println("A conta número " + c1.getNumero() + " possui saldo " + c1.getSaldo());
+		System.out.println("A conta nï¿½mero " + c1.getNumero() + " possui saldo " + c1.getSaldo());
 		
 		c1.creditar(1000);
 		
-		System.out.println("Após o credito de R$ 1000,00, a conta número " + c1.getNumero() + " passou a ter saldo " + c1.getSaldo());		
+		System.out.println("Apï¿½s o credito de R$ 1000,00, a conta nï¿½mero " + c1.getNumero() + " passou a ter saldo " + c1.getSaldo());		
 		
 		c1.debitar(100);
 		
-		System.out.println("Após o débito de R$ 100,00, a conta número " + c1.getNumero() + " passou a ter saldo " + c1.getSaldo());	
+		System.out.println("Apï¿½s o dï¿½bito de R$ 100,00, a conta nï¿½mero " + c1.getNumero() + " passou a ter saldo " + c1.getSaldo());	
 		
 		System.out.println("");
 		
-		System.out.println("A conta número " + c2.getNumero() + " possui saldo " + c2.getSaldo());
+		System.out.println("A conta nï¿½mero " + c2.getNumero() + " possui saldo " + c2.getSaldo());
 		
 		c2.debitar(500);
 		
-		System.out.println("A conta número " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " Após débito de R$ 500");
+		System.out.println("A conta nï¿½mero " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " Apï¿½s dï¿½bito de R$ 500");
 		
 		//c1.creditar(1000);
 		
-		System.out.println("A conta número " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " e Limite de " + c2.getLimite());
+		System.out.println("A conta nï¿½mero " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " e Limite de " + c2.getLimite());
 		
 		c2.setLimite(10000);
 		
-		System.out.println("A conta número " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " e novo Limite de " + c2.getLimite());
+		System.out.println("A conta nï¿½mero " + c2.getNumero() + " possui saldo " + c2.getSaldo() + " e novo Limite de " + c2.getLimite());
 		
 		banco.CriaConta(c1);
 		banco.CriaConta(c2);
@@ -200,7 +202,7 @@ public class Banco {
 		
 		banco.ListaContas();
 		
-		banco.ListaContasPDF();
+		//banco.ListaContasPDF();
 		
 		banco.ListaContasXML();
 	

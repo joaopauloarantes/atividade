@@ -1,3 +1,5 @@
+package apresentacao;
+
 import java.util.Iterator;
 
 public class ContasXMLBuilder implements ContasBuilder {
