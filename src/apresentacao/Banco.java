@@ -22,7 +22,7 @@ public class Banco {
 	
 	private ArrayList<Conta> contas(){
 		// Singleton - Gatante que Banco tenha apenas
-		// uma �nica lista de contas.
+		// uma única lista de contas.
 		if (contas==null) {
 			ArrayList<Conta> contas = new ArrayList();
 			return contas;
