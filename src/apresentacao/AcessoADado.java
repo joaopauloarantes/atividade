@@ -1,4 +1,88 @@
 package apresentacao;
+/*
+ * -- Table: public.conta
+
+-- DROP TABLE IF EXISTS public.conta;
+
+CREATE TABLE IF NOT EXISTS public.conta
+(
+    numero character(20) COLLATE pg_catalog."default" NOT NULL,
+    saldo double precision,
+    CONSTRAINT comnta_pk PRIMARY KEY (numero)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.conta
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.conta TO postgres;
+
+
+-- Table: public.conta_deb_especial
+
+-- DROP TABLE IF EXISTS public.conta_deb_especial;
+
+CREATE TABLE IF NOT EXISTS public.conta_deb_especial
+(
+    numero character(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT conta_deb_especial_pk PRIMARY KEY (numero),
+    CONSTRAINT foreignkey_conta_deb_especial FOREIGN KEY (numero)
+        REFERENCES public.conta_especial (numero) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.conta_deb_especial
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.conta_deb_especial TO postgres;
+
+-- Table: public.conta_especial
+
+-- DROP TABLE IF EXISTS public.conta_especial;
+
+CREATE TABLE IF NOT EXISTS public.conta_especial
+(
+    numero character(20) COLLATE pg_catalog."default" NOT NULL,
+    limite double precision,
+    CONSTRAINT conta_especial_pk PRIMARY KEY (numero),
+    CONSTRAINT foreignkey_conta_especial FOREIGN KEY (numero)
+        REFERENCES public.conta (numero) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.conta_especial
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.conta_especial TO postgres;
+
+-- Table: public.conta_normal
+
+-- DROP TABLE IF EXISTS public.conta_normal;
+
+CREATE TABLE IF NOT EXISTS public.conta_normal
+(
+    numero character(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT conta_normal_pk PRIMARY KEY (numero)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.conta_normal
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.conta_normal TO postgres;
+
+ * 
+ * 
+ */
+
 
 import br.embrapa.reinsertec.restjson.bean.DiagnosticoJaxBean;
 import br.embrapa.reinsertec.restjson.bean.FazendaJaxBean;
