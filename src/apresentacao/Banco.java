@@ -144,11 +144,19 @@ public class Banco {
 	
 	public static void main (String args[]) {
 		Banco banco = new Banco();
+		AcessoADado a = new AcessoADado();
+		String mensagem = new String();
 		
 		Conta c1;
 		c1 = new ContaNormal();
 		c1.setNumero(new String("1654-3"));
 		c1.setSaldo(500);
+		
+		mensagem = a.cadastrar_conta(c1.getNumero(), (float) c1.getSaldo());
+		mensagem = mensagem + a.cadastrar_conta_normal(c1.getNumero());
+		
+		
+		System.out.println(mensagem);
 		
 		ContaDebEspecial c2 = new ContaDebEspecial();
 		
